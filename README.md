@@ -115,7 +115,7 @@ The following images are stored directly in the **root `CrowdFlow-AI` folder**, 
 
 The overview screen shows the map-based crowd view, location markers, crowd indicators, and a highlighted alert.
 
-![CrowdFlow AI overview dashboard](overview-dashboard.jpeg)
+![CrowdFlow AI overview dashboard](overview-dashboard.png)
 
 ### 2. Dataset centre
 
