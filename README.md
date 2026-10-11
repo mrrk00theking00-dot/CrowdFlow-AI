@@ -1,606 +1,417 @@
 <div align="center">
 
-🚦 CrowdFlow AI
+# 🚦 CrowdFlow AI
 
-AI-Assisted Crowd Monitoring & Transit Intelligence
+### AI-Assisted Crowd Monitoring & Transit Intelligence
 
-A crowd-awareness and transit operations dashboard concept for Coimbatore, Tamil Nadu, India.
+**A crowd-awareness and transit operations dashboard prototype for Coimbatore, Tamil Nadu, India.**
 
-
-
-
+![Project Status](https://img.shields.io/badge/Status-Prototype-orange)
+![Interface](https://img.shields.io/badge/Interface-Transit%20Dashboard-blue)
+![Data](https://img.shields.io/badge/Data-Demo%20%2F%20Imported-lightgrey)
 
 </div>
 
-📌 Table of Contents
+---
 
-About the Project
+## 📌 Table of Contents
 
-Problem Statement
+- [About the Project](#-about-the-project)
+- [Problem Statement](#-problem-statement)
+- [Proposed Solution](#-proposed-solution)
+- [Key Features](#-key-features)
+- [Application Screenshots](#-application-screenshots)
+- [How the System Works](#-how-the-system-works)
+- [Crowd Classification Logic](#-crowd-classification-logic)
+- [Dataset Format](#-dataset-format)
+- [Project Structure](#-project-structure)
+- [Installation and Setup](#-installation-and-setup)
+- [Using the Application](#-using-the-application)
+- [Current Scope and Limitations](#-current-scope-and-limitations)
+- [Privacy and Safety](#-privacy-and-safety)
+- [Future Enhancements](#-future-enhancements)
+- [Contributing](#-contributing)
+- [License](#-license)
 
-Proposed Solution
+## 🌐 About the Project
 
-Features
+**CrowdFlow AI** is a dashboard concept for viewing crowd conditions and transit-related information in one place. It is designed around a city bus transit scenario in Coimbatore, India, with a map-based overview, crowd indicators, driver records, and a dataset-import workspace.
 
-Screenshots
+The project aims to make it easier for a transport operator to notice potentially crowded areas, inspect supporting information, and make better-informed decisions. Its interface brings together several operational views instead of requiring an operator to switch between separate spreadsheets and tools.
 
-System Workflow
+> **Important:** The screenshots illustrate the interface and sample records. They do not, by themselves, establish that live GPS, CCTV, a production database, predictive AI, or external notifications are connected. Confirm each capability in the source code before describing it as operational.
 
-Crowd Classification Algorithm
+## 🎯 Problem Statement
 
-Dataset Structure
+Crowd build-up around bus stops, transport hubs, and road junctions can contribute to long waiting times, congestion, and passenger-safety concerns. Operators may have difficulty identifying busy locations quickly when crowd observations, bus information, and driver records are separated across different systems.
 
-Technology Overview
+A useful transit dashboard should help operators:
 
-Getting Started
+- Compare crowd levels across multiple areas.
+- Identify locations that exceed a defined crowd threshold.
+- Review driver and vehicle information in context.
+- Import structured data for analysis.
+- Surface alerts that support timely human review.
+- Provide a foundation for future crowd-trend analysis and forecasting.
 
-Using the Dashboard
+## 💡 Proposed Solution
 
-Repository Structure
+CrowdFlow AI presents a unified dashboard with a map-style crowd overview, a driver directory, and a dataset centre for CSV-based data. Colour-coded map markers help distinguish crowd categories, while a highlighted alert draws attention to locations that cross a configured threshold.
 
-Demo Data and Limitations
+With reliable timestamped observations and validated integrations, the project could be extended to estimate how quickly a crowd is growing and forecast periods of high demand. These are future capabilities unless the current code already implements and validates them.
 
-Future Enhancements
+## ✨ Key Features
 
-Safety and Privacy
+### 🗺️ 1. Overview dashboard
+- Map-style display of transit locations around Coimbatore.
+- Markers representing different crowd levels.
+- Crowd indicators for individual areas.
+- A highlighted red-zone alert for locations that meet the configured threshold.
+- Dashboard navigation to other transit-management sections.
+- A Voice Assistant entry point visible in the interface.
 
-Contributing
+### 🚦 2. Crowd-risk visualisation
+- Colour-coded categories make it easier to compare locations.
+- High-crowd areas can be prioritised for review.
+- Threshold alerts provide a simple, explainable way to flag busy areas.
+- Threshold values should be verified against the implementation and real operating requirements.
 
-License
+### 🧑‍✈️ 3. Driver directory
+The driver-directory screen presents a table-style view of driver and assignment information, such as:
+- Driver name and identifier.
+- Assigned bus or vehicle.
+- Route and area.
+- Driver availability or duty status.
+- Search and filter controls visible in the interface.
+- An in-app notification action visible in the interface.
 
-Repository
+The availability of live driver data or working notification delivery depends on the backend and integrations.
 
-🌐 About the Project
+### 📂 4. Dataset centre
+The dataset page presents a CSV import workflow and guidance for preparing structured data. It includes:
+- A CSV file-selection/import area.
+- An example CSV schema.
+- Dataset requirements and validation guidance.
+- A place to prepare data for use by the application.
 
-CrowdFlow AI is a transit-management dashboard prototype designed to help operators view crowd levels across multiple locations, identify areas that may need attention, and review related driver, bus, route, and dataset information from one workspace.
+Successful upload, validation, storage, and processing should be verified by running the app and inspecting the implementation.
 
-The interface uses a Coimbatore city bus transit scenario. It includes a map-style crowd overview, coloured location markers, red-zone alerts, a driver directory, a CSV dataset import page, and navigation to other transit-management modules.
+### 🚌 5. Transit workspace navigation
+The screenshots show navigation items for:
+- Overview
+- Drivers
+- Fleet & Vehicles
+- Ticket Analytics
+- Datasets
+- Notifications
 
-The goal is to provide a clear operational view of crowd conditions and create a foundation for future data-driven decision support.
+Some navigation items may be interface placeholders or may depend on the current code version.
 
-Current status: The supplied screenshots display illustrative demo data. They do not prove that a live bus GPS feed, CCTV feed, production database, predictive AI model, or external notification service is connected.
+## 🖼️ Application Screenshots
 
-🎯 Problem Statement
+The following images are stored directly in the **root `CrowdFlow-AI` folder**, alongside `README.md`. The Markdown image links use relative paths, so no `assets/` folder is needed.
 
-Crowd build-up around bus stops, junctions, and transport hubs can lead to longer waiting times, congestion, and passenger-safety concerns. When crowd information and fleet records are maintained separately, operators may not have a single, easy-to-understand view of which areas need attention.
+### 1. Overview dashboard
 
-CrowdFlow AI explores a dashboard that can help operators:
+The overview screen shows the map-based crowd view, location markers, crowd indicators, and a highlighted alert.
 
-Monitor crowd values for different areas.
+![CrowdFlow AI overview dashboard](overview-dashboard.jpg)
 
-Visually identify locations with elevated crowd levels.
+### 2. Dataset centre
 
-Review routes, buses, drivers, and vehicle records.
+The dataset centre shows the CSV import area, example schema, and dataset requirements.
 
-Import structured data through CSV files.
+![CrowdFlow AI dataset centre](dataset-centre.jpg)
 
-Use alerts to prioritise review and human-led operational decisions.
+### 3. Driver directory
 
-💡 Proposed Solution
+The driver directory shows driver records and related assignment/status information.
 
-CrowdFlow AI brings crowd observations and transit-related records into one interface. The overview page visualises locations on a map and uses colour-coded markers to represent crowd categories. A red-zone alert highlights locations at or above a configured threshold. Separate pages provide driver information and a CSV dataset import workflow.
+![CrowdFlow AI driver directory](driver-directory.jpg)
 
-With validated historical and live data integrations, the project could be extended to estimate crowd growth, forecast busy periods, and suggest possible operational responses. These extensions require separate implementation and testing; a threshold alert alone is not a predictive AI model.
+### 4. Crowd dataset preview
 
-✨ Features
+The dataset preview shows example tabular fields such as area, tickets, crowd, coordinates, buses, and route information.
 
-🗺️ 1. Crowd overview dashboard
+![CrowdFlow AI crowd dataset preview](crowd-dataset-preview.jpg)
 
-Map-style view of locations around Coimbatore.
-
-Coloured markers for crowd categories.
-
-Area-level crowd percentages.
-
-Red-zone alert for locations at or above the configured threshold.
-
-Refresh control and visible data-source status.
-
-Voice Assistant interface entry point.
-
-🚦 2. Crowd-risk indicators
-
-High: pink/red.
-
-Medium: orange.
-
-Low: green.
-
-Quick visual comparison between locations.
-
-Threshold-based alerting to draw attention to busy areas.
-
-🧑‍✈️ 3. Driver directory
-
-Driver name and unique driver ID.
-
-Assigned bus registration.
-
-Route and area information.
-
-Driver status, such as On duty or Available.
-
-Search and status-filter controls.
-
-In-app notification action shown in the interface.
-
-📂 4. Dataset centre
-
-CSV file selection and import workflow.
-
-Example CSV schema.
-
-Validate-before-import interaction.
-
-Support for area and crowd fields, with optional route, driver, and vehicle details.
-
-Dataset guidance about headers, units, and timestamps.
-
-🚌 5. Transit workspace navigation
-
-The sidebar shown in the screenshots provides navigation for:
-
-Overview
-
-Drivers
-
-Fleet & Vehicles
-
-Ticket Analytics
-
-Datasets
-
-Notifications
-
-The availability and completeness of each module depend on the source code version in the repository.
-
-🎙️ 6. Voice Assistant interface
-
-The screenshots show a Voice Assistant button. Voice recognition, text-to-speech, language support, and action execution should be considered implemented only if the relevant code and integrations are present and tested.
-
-🖼️ Screenshots
-
-All four screenshots are stored directly in the main CrowdFlow-AI repository folder, alongside this README.md. The image links below therefore use root-level relative paths; no assets/ or other image folder is required.
-
-1. Overview dashboard — Coimbatore crowd map
-
-The overview screen shows map markers, crowd-level colours, a red-zone alert, and the Voice Assistant entry point.
-
-
-
-2. Dataset centre — CSV import
-
-The dataset screen shows the CSV upload workflow, example schema, and dataset requirements.
-
-
-
-3. Driver directory
-
-The driver page shows driver IDs, assigned buses, routes, areas, statuses, and notification actions.
-
-
-
-4. Crowd dataset preview
-
-The example data table includes fields such as area, tickets, crowd, latitude, longitude, buses, and route.
-
-
-
-🔄 System Workflow
+## 🔄 How the System Works
 
 The intended high-level workflow is:
 
-Load data from a demo dataset or an operator-provided CSV.
+1. **Prepare data** using a supported CSV structure or an authorised data source.
+2. **Load data** through the application’s dataset workflow.
+3. **Validate input** by checking required columns, data types, coordinates, and missing values.
+4. **Determine crowd status** using the crowd value and the configured classification logic.
+5. **Visualise locations** and their crowd categories on the overview map.
+6. **Flag threshold crossings** so the operator can inspect potentially busy areas.
+7. **Review transit information** through the driver directory and other available modules.
+8. **Refresh and verify** data when new observations are imported or received.
 
-Validate the data by checking required columns, numeric values, coordinates, and formatting.
+### Conceptual architecture
 
-Read crowd values from the supplied dataset or from an authorised data source if a live integration is implemented.
+```text
+CSV / Sample Data / Future Authorised Live Feeds
+                     |
+                     v
+              Data Import Layer
+                     |
+                     v
+          Validation and Normalisation
+                     |
+                     v
+          Crowd Classification / Rules
+                     |
+                     v
+        Map Markers, Status and Alerts
+                     |
+                     v
+     Overview | Drivers | Dataset Workspace
+                     |
+                     v
+           Operator Review and Action
+```
 
-Classify crowd levels using the configured thresholds.
+This is a conceptual view of the intended workflow. The actual components and data flow should be confirmed from `app.py`, `templates/`, and `static/`.
 
-Display area markers and crowd indicators on the map.
+## 🧮 Crowd Classification Logic
 
-Raise an alert when a location reaches the red-zone threshold.
+A threshold-based classifier is a simple starting point for assigning crowd categories. For example, if the project uses a crowd percentage and the high-crowd threshold is 75%, the logic could be:
 
-Review related records using the driver, fleet, and dataset pages.
-
-Refresh the information after updated data is loaded or received.
-
-Conceptual architecture
-
-       Demo CSV / Imported CSV / Future Live Data
-                         |
-                         v
-                Data Loading Layer
-                         |
-                         v
-             Validation and Normalisation
-                         |
-                         v
-             Crowd Classification Logic
-                         |
-                         v
-          Area Status, Map Markers and Alerts
-                         |
-                         v
-          Dashboard / Drivers / Dataset Pages
-                         |
-                         v
-             Operator Review and Action
-
-This is a conceptual workflow, not a claim that every component is already connected in the current build.
-
-🧮 Crowd Classification Algorithm
-
-The dashboard screenshot indicates a red-zone threshold of 75% crowd or higher. A basic rule-based classifier could be:
-
+```python
 def classify_crowd(crowd_percent: float) -> str:
     if crowd_percent >= 75:
         return "High"
     elif crowd_percent >= 45:
         return "Medium"
     return "Low"
+```
 
-Crowd value
+| Illustrative crowd value | Category | Example display colour |
+|---:|---|---|
+| 0–44% | Low | Green |
+| 45–74% | Medium | Orange |
+| 75–100% | High / Red zone | Red or pink |
 
-Illustrative category
+**These ranges are examples, not a claim about the exact thresholds in your code.** Use the thresholds and crowd-value meaning implemented by the application. If the field is a raw count rather than a percentage, it must not be labelled as a percentage.
 
-Display colour
+### Threshold alert vs. predictive AI
 
-0–44%
+A threshold alert reports that a value has crossed a configured limit. It does not, on its own, predict future crowd growth.
 
-Low
+If the system collects reliable timestamped crowd measurements, a basic growth-rate estimate can be calculated as:
 
-Green
-
-45–74%
-
-Medium
-
-Orange
-
-75–100%
-
-High / Red zone
-
-Pink or red
-
-These ranges are illustrative. They should match the actual application logic and the validated meaning of the crowd field.
-
-Rule-based alerts vs. AI prediction
-
-A threshold rule identifies a location whose current value crosses a configured limit. It does not predict how quickly a crowd will grow.
-
-If timestamped observations are available, a simple growth-rate estimate can be calculated as:
-
-[
+\[
 \text{Growth rate} = \frac{C_t - C_{t-\Delta t}}{\Delta t}
-]
+\]
 
 where:
+- \(C_t\) is the current crowd measurement.
+- \(C_{t-\Delta t}\) is the earlier measurement.
+- \(\Delta t\) is the time between the measurements.
 
-(C_t) is the current crowd measurement.
+A forecasting model would require historical data, a defined prediction target, validation, and performance testing across different locations and times.
 
-(C_{t-\Delta t}) is the previous measurement.
+## 📊 Dataset Format
 
-(\Delta t) is the time interval between measurements.
+The dataset preview suggests fields similar to the following. Confirm the exact column names and required fields in the current CSV parser before preparing a production dataset.
 
-Reliable forecasting would require suitable historical data, a defined prediction target, model evaluation, and testing across different locations and times.
+| Field | Description | Example |
+|---|---|---|
+| `area` | Area or transit location | `Gandhipuram` |
+| `tickets` | Ticket count or related value | `120` |
+| `crowd` | Crowd percentage or score; define the unit | `86` |
+| `lat` | Latitude | `11.0183` |
+| `lng` | Longitude | `76.9725` |
+| `buses` | Number of associated buses | `8` |
+| `route` | Route identifier | `45C` |
+| `driver` | Driver display name, if used | `Demo Driver 1` |
+| `driver_id` | Unique driver identifier, if used | `DRV-001` |
+| `vehicle` | Vehicle identifier, if used | `TN 38 AB 1001` |
+| `speed` | Speed value, if used; document the unit | `18` |
+| `status` | Driver or vehicle status, if used | `On duty` |
 
-📊 Dataset Structure
+### Example CSV
 
-The example schema shown in the UI contains these fields:
-
-Field
-
-Description
-
-Example
-
-area
-
-Area or transit location
-
-Gandhipuram
-
-tickets
-
-Ticket count/value
-
-120
-
-crowd
-
-Crowd percentage or score; define its meaning
-
-86
-
-lat
-
-Latitude
-
-11.0183
-
-lng
-
-Longitude
-
-76.9725
-
-buses
-
-Number of associated buses
-
-8
-
-route
-
-Route identifier
-
-45C
-
-driver
-
-Driver display name
-
-Demo Driver 1
-
-driver_id
-
-Unique driver identifier
-
-DRV-001
-
-vehicle
-
-Vehicle registration/identifier
-
-TN 38 AB 1001
-
-speed
-
-Speed value; document its unit
-
-18
-
-status
-
-Driver or vehicle status
-
-On duty
-
-Example CSV
-
+```csv
 area,tickets,crowd,lat,lng,buses,route,driver,driver_id,vehicle,speed,status
 Gandhipuram,120,86,11.0183,76.9725,8,45C,Demo Driver 1,DRV-001,TN 38 AB 1001,18,On duty
 Ukkadam,95,68,10.9914,76.9617,5,45C,Demo Driver 2,DRV-002,TN 38 AB 1002,12,On duty
 Peelamedu,76,42,11.0268,77.0014,4,S1,Demo Driver 3,DRV-003,TN 38 AB 1003,20,Available
+```
 
-CSV preparation tips
+The rows above are **illustrative sample data**, not verified live information.
 
-Save CSV files with UTF-8 encoding and a header row.
+### CSV preparation checklist
+- Save the file as UTF-8 CSV with a header row.
+- Use the exact column names expected by the application.
+- Use numeric values for coordinates and numeric fields.
+- Define whether `crowd` represents a percentage, a count, or a score.
+- Document units for speed and any time-related values.
+- Check coordinates and handle missing or malformed values.
+- Use synthetic or anonymised data for public demonstrations.
 
-Keep column names consistent with the import implementation.
+## 📁 Project Structure
 
-Use numeric values for coordinates, crowd values, ticket counts, and other numeric columns.
+Based on the repository layout shown, the project’s top-level structure includes the following:
 
-Confirm whether crowd is a percentage, occupancy ratio, or another score.
+```text
+CrowdFlow-AI/
+├── static/                     # Static frontend resources (CSS, JS, images, etc.)
+├── templates/                  # HTML templates, if rendered by the backend
+├── .gitignore
+├── README.md
+├── app.py                      # Python application entry point
+├── requirements.txt            # Python dependencies
+├── overview-dashboard.jpg      # Screenshot embedded in this README
+├── dataset-centre.jpg          # Screenshot embedded in this README
+├── driver-directory.jpg        # Screenshot embedded in this README
+└── crowd-dataset-preview.jpg   # Screenshot embedded in this README
+```
 
-Document units for speed and timestamps.
+Keep your existing source files and folders. The four `.jpg` files above are documentation screenshots and should be placed in the root folder next to `README.md`, not inside `static/` or an `assets/` directory.
 
-Validate coordinates and handle missing or malformed values.
+## 🚀 Installation and Setup
 
-Use synthetic or anonymised records for public demonstrations.
+The repository screenshot shows `app.py` and `requirements.txt`, suggesting a Python application. The following setup is appropriate if `app.py` uses Python dependencies listed in `requirements.txt`; adjust the run command if the source code specifies something different.
 
-🧰 Technology Overview
+### Prerequisites
+- Python 3.x compatible with the dependencies.
+- Git.
+- A modern web browser.
 
-The screenshots show the interface and example schema, but they do not establish every technology used by the underlying implementation. Update this table to reflect the actual repository source code and dependencies.
+### 1. Clone the repository
 
-Component
-
-Purpose
-
-Frontend/dashboard
-
-Pages, navigation, forms, tables, and alert cards
-
-Map layer
-
-Geographic display and location markers
-
-CSV handling
-
-Dataset upload and validation
-
-Backend/API, if present
-
-Data access and import processing
-
-Crowd logic
-
-Classification and threshold alerts
-
-Notifications, if configured
-
-In-app or external operator messages
-
-Possible implementation choices include Python with Flask or FastAPI, JavaScript/TypeScript, Leaflet with OpenStreetMap, and CSV or database storage. Keep only the technologies that are actually used by the project.
-
-🚀 Getting Started
-
-Prerequisites
-
-Install the tools required by the repository's actual source code:
-
-Git
-
-Python 3.x, if the project has a Python backend
-
-A modern web browser
-
-Node.js and npm, if the frontend uses a Node-based toolchain
-
-1. Clone the repository
-
+```bash
 git clone https://github.com/mrrk00theking00-dot/CrowdFlow-AI.git
 cd CrowdFlow-AI
+```
 
-2. Inspect the project files
+### 2. Create and activate a virtual environment
 
-# Windows PowerShell
-Get-ChildItem
+**Windows PowerShell:**
 
-Look for the actual application entry point and dependency files, such as requirements.txt, pyproject.toml, or package.json.
-
-3. Install dependencies
-
-If the project contains requirements.txt:
-
-python -m venv .venv
+```powershell
+py -m venv .venv
 .\.venv\Scripts\Activate.ps1
+```
+
+If PowerShell blocks activation, you can use the environment’s Python directly or follow your organisation’s execution-policy guidance.
+
+**macOS/Linux:**
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+```
+
+### 3. Install dependencies
+
+```bash
+python -m pip install --upgrade pip
 python -m pip install -r requirements.txt
+```
 
-If the project contains package.json:
+On Windows, if `python` is not recognised, try `py -m pip install -r requirements.txt`.
 
-npm install
+### 4. Run the application
 
-Use only the setup path that matches the files in the repository.
-
-4. Start the application
-
-Run the command documented by the project. Examples include:
-
+```bash
 python app.py
+```
 
-or, for a frontend project:
+If the app starts successfully, open the local URL printed in the terminal. A Flask development application commonly uses `http://127.0.0.1:5000`, but use the actual address reported by your application.
 
-npm run dev
+For local development, keep the terminal open while using the site. If startup fails, review the error message and check that all dependencies are installed.
 
-The correct command and local address depend on the actual implementation. Check the terminal output for the URL and any startup errors.
+## 🧭 Using the Application
 
-🧭 Using the Dashboard
+1. Start the application using the setup instructions.
+2. Open the local address printed in the terminal.
+3. Select **Overview** to inspect the map and crowd indicators.
+4. Review highlighted areas and check the displayed data source and freshness.
+5. Open **Drivers** to search records and review assignments/statuses.
+6. Open **Datasets** to select a CSV file and follow the on-screen instructions.
+7. Use the expected schema when preparing your own test file.
+8. Explore Fleet & Vehicles, Ticket Analytics, and Notifications if those modules are implemented.
+9. Treat sample values as demonstrations until verified against an authoritative source.
 
-Open Overview to inspect the map and crowd alerts.
+## 🧰 Technology Overview
 
-Compare the crowd percentages and identify locations flagged as high.
+The screenshot alone cannot confirm every library used. Based on the visible repository structure, `app.py` and `requirements.txt` indicate a Python entry point and dependency list, while `templates/` and `static/` are commonly used for server-rendered pages and frontend resources. Verify the exact framework and libraries from the source code and requirements.
 
-Open Drivers to search records and review assigned buses, routes, and statuses.
+| Project area | Purpose |
+|---|---|
+| `app.py` | Python application entry point |
+| `requirements.txt` | Python package dependencies |
+| `templates/` | HTML templates, if used |
+| `static/` | CSS, JavaScript, and other static resources |
+| CSV dataset | Sample or imported crowd/transit records |
+| Map and crowd logic | Location display and crowd status; verify implementation |
 
-Open Datasets to select and validate a CSV file.
+## ⚠️ Current Scope and Limitations
 
-Use the example schema to prepare compatible records.
+- Screenshots and example values should be treated as demonstration material.
+- A visible map does not prove that live GPS or bus tracking is connected.
+- A crowd threshold is not the same as an AI forecasting model.
+- A visible notification button does not prove that messages are delivered externally.
+- Dataset import should be tested with valid, invalid, empty, and oversized files.
+- Do not use demonstration values to make real-world dispatch or passenger-safety decisions.
+- Before a public release, document which modules are fully functional and which are still under development.
 
-Explore Fleet & Vehicles, Ticket Analytics, and Notifications if these modules are enabled.
+## 🛡️ Privacy and Safety
 
-Treat demo records as illustrative until verified operational data is connected.
+Before using CrowdFlow AI in a real transit environment:
 
-📁 Repository Structure
+- Validate the source, accuracy, timestamp, and meaning of crowd observations.
+- Make stale data and connection failures visible to operators.
+- Require human review before dispatching, rerouting, or taking safety-critical action.
+- Restrict access to driver, vehicle, and operational information.
+- Never commit passwords, API keys, private driver records, or confidential datasets.
+- Validate uploaded CSV files, including their headers, values, file size, and coordinates.
+- Use anonymised or synthetic information in public repositories and demonstrations.
 
-Place the README and all four image files directly in the main CrowdFlow-AI folder:
+## 🛣️ Future Enhancements
 
-CrowdFlow-AI/
-├── README.md
-├── overview-dashboard.jpg
-├── dataset-centre.jpg
-├── driver-directory.jpg
-├── crowd-dataset-preview.jpg
-├── app.py                    # if present
-├── requirements.txt          # if present
-├── package.json              # if present
-└── other existing project files and folders
+Possible next steps include:
 
-The last entries are examples of possible application files, not a requirement to create empty files. Keep your existing project structure and source files.
+- [ ] Connect authorised live GPS or vehicle telemetry.
+- [ ] Record timestamped crowd observations and display data freshness.
+- [ ] Calculate crowd growth rates from successive measurements.
+- [ ] Train and evaluate a forecasting model using suitable historical data.
+- [ ] Add explainable alerts and configurable crowd thresholds.
+- [ ] Add route suggestions with operator approval.
+- [ ] Integrate authorised notification providers and delivery tracking.
+- [ ] Add authentication, role-based access control, and audit logs.
+- [ ] Add automated tests for data import and classification logic.
+- [ ] Improve mobile responsiveness and accessibility.
+- [ ] Add Tamil and English voice assistance if required.
+- [ ] Document deployment and production configuration.
 
-🧪 Demo Data and Limitations
+## 🤝 Contributing
 
-The screenshots are labelled as a demo/illustrative environment. Sample values are suitable for interface demonstrations and testing but should not be treated as current crowd measurements or live fleet telemetry.
+Suggestions, bug reports, and improvements are welcome.
 
-A production version should distinguish clearly between:
+1. Fork the repository.
+2. Create a branch for your change.
+3. Implement a focused improvement.
+4. Test the change and update relevant documentation.
+5. Open a pull request explaining the change and how it was tested.
 
-Demo data.
+For bug reports, include steps to reproduce the issue, expected behaviour, actual behaviour, and relevant error messages. Do not include credentials or private operational data.
 
-Imported operator-provided records.
+## 📄 License
 
-Live data from authenticated providers.
+No license was visible in the provided repository listing. Until you add a `LICENSE` file, reuse and redistribution permissions may be unclear. Choose and add a license that fits your project before explicitly granting permission to reuse the code.
 
-Model-generated estimates or predictions.
+## 🔗 Repository
 
-Where possible, show the source and last-updated time, and indicate when information is missing or stale.
+**GitHub repository:** https://github.com/mrrk00theking00-dot/CrowdFlow-AI
 
-🛡️ Safety and Privacy
-
-Before using the system for real transit operations:
-
-Validate the reliability, timestamp, and meaning of crowd measurements.
-
-Test thresholds against representative data.
-
-Do not present rule-based alerts as predictive AI.
-
-Show stale-feed and connection failures clearly.
-
-Require human review before dispatch or rerouting decisions.
-
-Restrict access to driver and vehicle information.
-
-Never commit passwords, API keys, private driver records, or confidential operational datasets.
-
-Test CSV imports with missing columns, invalid numbers, duplicate rows, and out-of-range coordinates.
-
-Do not use demo values to make real-world safety decisions.
-
-🛣️ Future Enhancements
-
-Potential enhancements include:
-
-Integrate authorised live GPS and bus telemetry.
-
-Store timestamped crowd observations and show data freshness.
-
-Estimate crowd growth rates from historical observations.
-
-Train and evaluate a crowd forecasting model.
-
-Add route recommendations with human approval.
-
-Integrate SMS/WhatsApp or other providers with delivery tracking, if authorised.
-
-Add role-based access control and audit logs.
-
-Add automated tests for CSV validation and crowd classification.
-
-Improve mobile responsiveness and keyboard accessibility.
-
-Add Tamil and English voice assistance.
-
-Add monitoring, structured logs, and deployment documentation.
-
-🤝 Contributing
-
-Contributions and suggestions are welcome.
-
-Fork the repository.
-
-Create a branch for your change.
-
-Implement a focused improvement.
-
-Test the change and document relevant results.
-
-Open a pull request explaining what changed and how it was tested.
-
-When reporting a bug, include reproduction steps, expected behaviour, actual behaviour, and relevant error messages. Do not include credentials or confidential transit data.
-
-📄 License
-
-A license has not been specified in this README. Add a LICENSE file with the license you choose before explicitly granting others permission to reuse, modify, or redistribute the project.
-
-🔗 Repository
-
-GitHub: https://github.com/mrrk00theking00-dot/CrowdFlow-AI
+---
 
 <div align="center">
 
-CrowdFlow AI — Understand crowd conditions. Support better-informed transit decisions.
+**CrowdFlow AI — Understand crowd conditions. Support better-informed transit decisions.**
 
 </div>
