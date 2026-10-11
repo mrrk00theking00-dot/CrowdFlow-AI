@@ -115,25 +115,25 @@ The following images are stored directly in the **root `CrowdFlow-AI` folder**, 
 
 The overview screen shows the map-based crowd view, location markers, crowd indicators, and a highlighted alert.
 
-![CrowdFlow AI overview dashboard](overview-dashboard.jpg)
+![CrowdFlow AI overview dashboard](overview-dashboard.jpeg)
 
 ### 2. Dataset centre
 
 The dataset centre shows the CSV import area, example schema, and dataset requirements.
 
-![CrowdFlow AI dataset centre](dataset-centre.jpg)
+![CrowdFlow AI dataset centre](dataset-centre.jpeg)
 
 ### 3. Driver directory
 
 The driver directory shows driver records and related assignment/status information.
 
-![CrowdFlow AI driver directory](driver-directory.jpg)
+![CrowdFlow AI driver directory](driver-directory.jpeg)
 
 ### 4. Crowd dataset preview
 
 The dataset preview shows example tabular fields such as area, tickets, crowd, coordinates, buses, and route information.
 
-![CrowdFlow AI crowd dataset preview](crowd-dataset-preview.jpg)
+![CrowdFlow AI crowd dataset preview](crowd-dataset-preview.jpeg)
 
 ## 🔄 How the System Works
 
